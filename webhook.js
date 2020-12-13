@@ -33,7 +33,7 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
           var discordnageru = event.message.text
           var important = event.source.groupId
           console.log("This is important:" + important)
-          client.channels.cache.get('786834536965079051').send(
+          client.channels.cache.get('Discord_Channel_ID').send(
             {embed: {
               title: "LINE Message (Text)",
               description: `From: ${userName}\nMessage: ${discordnageru}`,
@@ -46,7 +46,7 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
         if (event.type == "message" && event.message.type == "file"){
           var filenamae = event.message.fileName
           var fileookisa = event.message.fileSize
-          client.channels.cache.get('786834536965079051').send(
+          client.channels.cache.get('Discord_Channel_ID').send(
             {embed: {
               title: "LINE Message (File)",
               description: `From: ${userName}\nFile: ${filenamae} : ${fileookisa} Bite`,
@@ -60,7 +60,7 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
           var jyuusho = event.message.address
           var ido = event.message.latitude
           var keido = event.message.longitude
-          client.channels.cache.get('786834536965079051').send(
+          client.channels.cache.get('Discord_Channel_ID').send(
             {embed: {
               title: "LINE Message (Location)",
               description: `From: ${userName}\nLocation: ${jyuusho} \nLatitude: ${ido} \nLongitude: ${keido}`,
@@ -73,7 +73,7 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
         if (event.type == "message" && event.message.type == "sticker"){
           var stampnoid = event.message.id
           var stampsetumei = event.message.keywords
-          client.channels.cache.get('786834536965079051').send(
+          client.channels.cache.get('Discord_Channel_ID').send(
             {embed: {
               title: "LINE Message (Stamp)",
               description: `From: ${userName}\nStampID: ${stampnoid} \nKeywords: ${stampsetumei}`,
@@ -97,13 +97,13 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
           if (!error && response.statusCode == 200) {
               fs.writeFileSync(`./image.jpg`, new Buffer.from(body), 'binary');
               console.log('file saved');
-              client.channels.cache.get('786834536965079051').send(
+              client.channels.cache.get('Discord_Channel_ID').send(
                 {embed: {
                   title: "LINE Message (Picture)",
                   description: `From: ${userName}`
                 }}
               )
-              client.channels.cache.get('786834536965079051').send(
+              client.channels.cache.get('Discord_Channel_ID').send(
               { files: ['./image.jpg'] }
               )
           } else {
