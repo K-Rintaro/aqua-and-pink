@@ -69,15 +69,17 @@ const convertMsg = (message) => {
 }
 
 client.on("message", async (msg) => {
-    try{
-        if (msg.author.bot) return;
-        const message = convertMsg(msg)
-        await client2.pushMessage(
-            process.env.CHANNEL_ID,
-            message,
-        )
-    }catch(error) {
-        console.error(error);
+    if (msg.channel.id === "Discord_Channel_ID"){
+        try{
+            if (msg.author.bot) return;
+            const message = convertMsg(msg)
+            await client2.pushMessage(
+                process.env.CHANNEL_ID,
+                message,
+            )
+        }catch(error) {
+            console.error(error);
+        }
     }
 })
 
