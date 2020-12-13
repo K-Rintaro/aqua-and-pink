@@ -1,0 +1,28 @@
+{
+  "name": "aqua-and-pink",
+  "version": "1.0.0",
+  "description": "The perfect bot that can connect Discord and LINE",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K-Rintaro/aqua-and-pink.git"
+  },
+  "keywords": [
+    "bot",
+    "discord"
+  ],
+  "author": "Rintaro Kobayashi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/K-Rintaro/aqua-and-pink/issues"
+  },
+  "homepage": "https://github.com/K-Rintaro/aqua-and-pink#readme",
+  "dependencies": {
+    "@line/bot-sdk": "^7.1.0",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2"
+  }
+}
