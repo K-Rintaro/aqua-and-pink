@@ -84,6 +84,12 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
           )
         }
         let msgId = event.message.id
+        var important2 = event.source.groupId
+ 　　　 　if (typeof important2 === "undefined"){
+   　　 　client.channels.cache.get('Discord_Channel_ID').send(
+      　　"!!THIS IS DM!!"
+    　　　)
+　　　　　}
         console.log("pppppppp" + msgId)
         if (event.type == "message" && event.message.type == "image")
         var options2 = {
